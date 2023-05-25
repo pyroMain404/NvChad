@@ -1,14 +1,16 @@
----@type ChadrcConfig 
+---@type ChadrcConfig
 local M = {}
 
-M.plugins = 'custom.plugins'
-M.ui = { theme = 'catppuccin' }
+M.ui = { theme = "catppuccin" }
+
+M.plugins = "custom.plugins"
+
 M.mappings = {
-  ['general'] = {
+  ["general"] = {
     i = {
-      ['jk'] = { '<Esc>', 'Quit insert mode'}
-    }
-  }
+      ["jk"] = { "<Esc>", "Quit insert mode" },
+    },
+  },
 }
 
 return M
