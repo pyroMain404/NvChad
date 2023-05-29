@@ -5,12 +5,6 @@ M.ui = { theme = "catppuccin" }
 
 M.plugins = "custom.plugins"
 
-M.mappings = {
-  ["general"] = {
-    i = {
-      ["jk"] = { "<Esc>", "Quit insert mode" },
-    },
-  },
-}
+M.mappings = require "custom.mappings"
 
 return M
