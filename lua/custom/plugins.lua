@@ -2,15 +2,15 @@ local data = require "custom.configs.data"
 
 local plugins = {
 
-  { "Exafunction/codeium.vim", lazy = false },
-
   {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
-    end,
+    "williamboman/mason-lspconfig.nvim",
+    dependencies = {
+      "williamboman/mason.nvim",
+    },
+    lazy = false,
   },
+
+  { "Exafunction/codeium.vim", lazy = false },
 
   {
     "williamboman/mason.nvim",
@@ -29,10 +29,14 @@ local plugins = {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      "jose-elias-alvarez/null-ls.nvim",
-      config = function()
-        require "custom.configs.null-ls"
-      end,
+      {
+        "jose-elias-alvarez/null-ls.nvim",
+        config = function()
+          require "custom.configs.null-ls"
+        end,
+      },
+      { "williamboman/mason-lspconfig.nvim" },
+      { "folke/neodev.nvim", opts = {} },
     },
     config = function()
       require "plugins.configs.lspconfig"
